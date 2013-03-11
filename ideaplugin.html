@@ -1,25 +1,60 @@
 <head>
-	<title>Errai IntelliJ Plugin</title>
+    <title>Errai IntelliJ Plugin</title>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
-	<h1>Errai IntelliJ Plugin</h1>
-	<p>This page contains the direct download for the Errai integration plugin for IntelliJ IDEA.</p>
+<h1>Errai IntelliJ Plugin</h1>
 
-	<table>
-		<thead style="background-color: gray;">
-			<tr>
-				<td>Version</td>
-				<td>Description</td>
-				<td></td>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>v0.1</td>
-				<td>Errai Framework Plug-in for IntelliJ IDEA 12.0 (Community and Ultimate)</td>
-				<td><a href="idea-errai-plugin.jar">Download (JAR)</a></td>
-			</tr>
-		</tbody>
+<p>This page contains the direct download for the Errai integration plugin for IntelliJ IDEA.</p>
 
-	</table>
+<table>
+    <thead style="background-color: gray;">
+    <tr>
+        <td>Version</td>
+        <td>Description</td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>v0.1</td>
+        <td>Errai Framework Plug-in for IntelliJ IDEA 12.0 (Community and Ultimate)</td>
+        <td><a href="idea-errai-plugin.jar">Download (JAR)</a></td>
+    </tr>
+    </tbody>
+
+</table>
+
+<h2>Current features</h2>
+<ul>
+    <li>Errai UI</li>
+    <li>
+        <ul>
+            <li>Validates <tt>@Templated</tt> annotation</li>
+            <li>Validates all <tt>@DataField</tt> elements</li>
+            <li>Validates <tt>@EventHandler</tt> semantics</li>
+            <li>Provides refactoring support for data fields</li>
+            <li>Hyper-linking from code to template nodes</li>
+            <li>Code completion within <tt>@Templated</tt> and <tt>@DataField</tt> annotation attributes</li>
+            <li>Smart code completion inside Errai UI templates (ie. automatically suggests un-used data fields)</li>
+            <li>Code smells for potential <tt>@DataField</tt> injection problems</li>
+            <li>Quick fixes for various validation problems</li>
+        </ul>
+    </li>
+    <li>Errai Databinding</li>
+    <li>
+        <ul>
+            <li>Validates <tt>@Bound</tt> fields in Errai UI templates</li>
+            <li>Validates <tt>@AutoBound DataBinder&lt;T&gt;</tt> in Errai UI templates are properly bindable</li>
+            <li>Provides code completion for <tt>@Bound(property=xxx)</tt></li>
+            <li>Quick fixes for various validation problems</li>
+        </ul>
+    </li>
+</ul>
+
 </body>
