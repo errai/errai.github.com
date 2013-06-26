@@ -24,7 +24,7 @@
 	});
 	// twitter feed
 	$(".tweet").tweet({
-            username: "uberfire_org",
+            username: "jbosserrai",
             join_text: "auto",
             avatar_size: 32,
             count: 4,
