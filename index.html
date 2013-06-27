@@ -98,7 +98,7 @@ public class CustomerForm extends Composite {
 
   @EventHandler("saveButton")
   public void onSave(ClickEvent event) {
-    //state of customer now already reflects form contents (two-way data binding)
+    //customer object already reflects form contents (two-way data binding)
     sendCustomerToServer(customer);
   }
 }
