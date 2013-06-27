@@ -51,40 +51,61 @@
             <h2>Flexible HTML5 Templating</h2>
 
             <pre data-language=html>
-<div style="width: 400px">
-  <div class="item" data-field="main">
-    <div class="name" data-field="name">Item Name</div>
-    <div class="department" data-field="department">Department</div>
 
-    <!-- The span tags around "Added" and "by" make them candidates for internationalization -->
-    <div class="moreInfo">
-      <span>Added</span> <span data-field="addedOn">3 Days Ago</span>
-      <span>by</span> <span data-field="addedBy">you</span>
-    </div>
-    <hr>
-  </div>
+
+
+
+<div class="customer">
+  <input type="text" data-field="name" placeholder="Your Name">
+  <input type="tel" data-field="phone" paceholder="Phone Number">
 </div>
+
+
+
+
+            </pre>
+          </div>
+          <div class="da-slide">
+            <h2>Declarative Model ↔ UI Binding</h2>
+            <pre data-language=java>
+
+
+
+@Templated @Page
+public class CustomerForm extends Composite {
+  @Inject @Model Customer customer;
+  @Inject @Bound @DataField TextBox name;
+  @Inject @Bound @DataField TextBox phone;
+}
+
+
             </pre>
           </div>
           <div class="da-slide">
             <h2>Declarative Event Handlers</h2>
             <pre data-language=java>
-@Templated("#main")
-public class GroceryItemWidget extends Composite implements HasModel&lt;Item&gt; {
 
-    ...
 
-    @EventHandler
-    public void onMouseOver(MouseOverEvent event) {
-        System.out.println("MouseOver " + itemBinder.getModel().getName());
-        addStyleName("active");
-    }
+@EventHandler
+public void onMouseOver(MouseOverEvent event) {
+  addStyleName("active");
+}
 
-    @EventHandler
-    public void onMouseOut(MouseOutEvent event) {
-        System.out.println("MouseOut " + itemBinder.getModel().getName());
-        removeStyleName("active");
-    }
+@EventHandler
+public void onMouseOut(MouseOutEvent event) {
+  removeStyleName("active");
+}
+
+            </pre>
+          </div>
+          <div class="da-slide">
+            <h2>Client-side JPA Offline Storage</h2>
+            <pre data-language=java>
+@Inject EntityManager em;
+
+public void save(MyEntityType entity) {
+  em.merge(entity);
+  em.flush();
 }
             </pre>
           </div>
