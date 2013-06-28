@@ -100,6 +100,17 @@ form label {
     cursor: pointer
 }
 
+a {
+    color: #0088cc;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #005580;
+    text-decoration: underline;
+}
+
 .form-btn {
     width: 120px !important;
     cursor: pointer
@@ -663,7 +674,7 @@ footer {
 #howto-panels p {
     font-size: 31px;
     float: left;
-    margin: 8px 14px 0 180px;
+    margin: 8px 14px;
     position: relative;
     font-weight: bold;
     color: #777;
@@ -674,6 +685,7 @@ footer {
 a.howto-link:link {
     color: #777;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 a.howto-link:visited {
