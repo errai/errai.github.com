@@ -3,7 +3,7 @@
 	min-width: 100%;
 	min-height: 420px;
 	position: relative;
-	margin: 18px auto -20px auto;
+	margin: -10px auto -20px auto;
 	overflow: hidden;
 	-webkit-transition: background-position 1.4s ease-in-out 0.3s;
 	-moz-transition: background-position 1.4s ease-in-out 0.3s;
