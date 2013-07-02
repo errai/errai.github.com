@@ -89,6 +89,7 @@ public class CustomerForm extends Composite {
           <div class="da-slide">
             <h2>Bidirectional Model ↔ UI Binding</h2>
             <pre data-language=java>
+
 @Templated @Page
 public class CustomerForm extends Composite {
   @Inject @Model Customer customer;
@@ -98,7 +99,7 @@ public class CustomerForm extends Composite {
 
   @EventHandler("saveButton")
   public void onSave(ClickEvent event) {
-    //customer object already reflects form contents (two-way data binding)
+    //customer already reflects form contents (two-way data binding)
     sendCustomerToServer(customer);
   }
 }
@@ -107,6 +108,7 @@ public class CustomerForm extends Composite {
           <div class="da-slide">
             <h2>Choice of JAX-RS or Bus RPC</h2>
             <pre data-language=java>
+
 @Path("/customers")
 public interface CustomerEndpoint {
   @GET
@@ -125,6 +127,7 @@ public interface CustomerEndpoint {
           <div class="da-slide">
             <h2>Typesafe RPC Client</h2>
             <pre data-language=java>
+
 @Templated @Page
 public class CustomerForm extends Composite {
 
@@ -147,8 +150,9 @@ public class CustomerForm extends Composite {
 
 
 
-  @Templated @Page
+  @Templated
   public class MainMenu extends Composite {
+
     @Inject @DataField 
     private TranstionAnchor&lt;CustomerForm> customerForm;
     ...
@@ -161,8 +165,10 @@ public class CustomerForm extends Composite {
           <div class="da-slide">
             <h2>Typesafe Distributed Events</h2>
             <pre data-language=java>
+
 public class CustomerEndpointImpl implements CustomerEndpoint {
-  @Inject @New Event&lt;Customer> customerEvent;
+  @Inject @New 
+  private Event&lt;Customer> customerEvent;
 
   public long create(Customer customer) {
     customerEvent.fire(customer); 
@@ -181,11 +187,15 @@ public class CustomerList extends Composite {
             <pre data-language=java>
 
 
-
+@Templated @Page
 public class CustomerForm extends Composite {
-  @Inject Camera camera;
 
-  private void onBatteryLow(@Observes BatteryLowEvent event) {...}
+  @Inject 
+  private Camera camera;
+
+  private void onBatteryLow(@Observes BatteryLowEvent event) {
+     ...
+  }
 }
             </pre>
           </div>
@@ -196,7 +206,8 @@ public class CustomerForm extends Composite {
             <pre data-language=java>
 
 @Templated @Page
-public class CustomerForm extends Composite {      
+public class CustomerForm extends Composite {
+
   @Inject 
   private EntityManager em;
 
