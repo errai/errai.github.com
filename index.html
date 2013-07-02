@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Errai Framework</title>
-<!--  CSS reset -->
-<link rel="stylesheet" href="css/reset.css">
-<!--  CSS grid 960gs -->
-<link rel="stylesheet" href="css/grid.css">
-<!--  Main stylesheet -->
-<link rel="stylesheet" href="css/style.css">
+<!-- bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 <!--  Parallax slider stylesheet -->
 <link rel="stylesheet" href="css/cslider.css">
 <!--  Theme: black -->
 <link rel="stylesheet" href="css/black.css">
+
+<link rel="stylesheet" href="css/style.css">
 <!--  Lightbox gallery  -->
 <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen">
 <!--  Syntax highlighting theme  -->
@@ -29,7 +28,7 @@
 </head>
 <body>
   <div id="body-glow"></div>
-  <div class="container_12" id="main-container">
+  <div class="container" id="main-container">
     <!--  Header -->
     <header>
       <!--  Slider & Product area -->
@@ -38,12 +37,14 @@
         <div id="da-slider" class="da-slider">
           <div class="da-slide">
             <br>
+
             <h2>
               <b>Errai:</b> The browser as a platform
             </h2>
             <br>
-            <div class="da-img hidden-phone">
-              <img src="images/errai_logo.png" style="padding-top: 30px" alt="Errai Icon" />
+
+            <div class="da-img">
+              <img src="images/errai_logo.png" style="padding-top: 30px" alt="Errai Icon" class="hidden-phone" />
             </div>
           </div>
           <div class="da-slide">
@@ -55,9 +56,9 @@
 
 
 <div class="customer">
-  <input type="text" data-field="name" placeholder="Your Name">
-  <input type="tel" data-field="phone" paceholder="Phone Number">
-  <button data-field="saveButton">Save</button>
+    <input type="text" data-field="name" placeholder="Your Name">
+    <input type="tel" data-field="phone" paceholder="Phone Number">
+    <button data-field="saveButton">Save</button>
 </div>
 
 
@@ -156,7 +157,7 @@ public class CustomerForm extends Composite {
 
             </pre>
           </div>
-         
+
           <div class="da-slide">
             <h2>Typesafe Distributed Events</h2>
             <pre data-language=java>
@@ -175,8 +176,8 @@ public class CustomerList extends Composite {
             </pre>
           </div>
 
-            <div class="da-slide">
-                <h2>Integrated with Mobile hardware</h2>
+          <div class="da-slide">
+            <h2>Integrated with Mobile hardware</h2>
             <pre data-language=java>
 
 
@@ -219,107 +220,110 @@ public class CustomerForm extends Composite {
         <h2 class="hidden-phone">
           Build your next generation <b>web app</b> now!
         </h2>
-        <a class="btn btn-large" href="http://jboss.org/errai/Downloads" target="_blank">Download Now</a>
+        <a class="btn btn-large btn-success" href="http://jboss.org/errai/Downloads" target="_blank">Download Now</a>
 
         <div id="right-ear"></div>
       </section>
     </header>
     <div class="clear"></div>
     <!--  Content -->
-    <section id="content">
-      <div class="grid_3 content-box">
+    <section id="content" class="row-fluid text-center">
+      <div class="span3 content-box">
         <img src="images/icons/html5.png" alt="HTML5 templates">
 
         <h3>HTML5 Templates</h3>
 
-        <p>Create standard conform HTML5 templates or use existing HTML5 and CSS files to design your web application.</p>
+        <p>Create standard conform HTML5 templates or use existing HTML5 and CSS files to design your web
+          application.</p>
       </div>
-       <div class="grid_3 content-box">
+      <div class="span3 content-box">
         <img src="images/icons/cog.png" alt="Share Code">
 
         <h3>Shared Code</h3>
 
-        <p>Share code between the client and the server. Share your data model, validation and business logic. Don't repeat yourself!</p>
+        <p>Share code between the client and the server. Share your data model, validation and business logic. Don't
+          repeat yourself!</p>
       </div>
-      <div class="grid_3 content-box">
+      <div class="span3 content-box">
         <img src="images/icons/lcd.png" alt="Boilerplate-free">
+
         <h3>Boilerplate-free API</h3>
 
         <p>Leverage Errai's typesafe and declarative programming model. It's simple and powerful.
       </div>
-     
-      <div class="grid_3 content-box">
+
+      <div class="span3 content-box">
         <img src="images/icons/bulb.png" alt="Open Source">
 
         <h3>Open Source</h3>
 
         <p>Join the Errai open source community! Errai is developed under the Apache License, Version 2.0.</p>
       </div>
-
-      <div class="clear"></div>
-      <div class="grid_12 blockquote">
-        <blockquote>
-          <p>
-            <b>Important Note:</b> This web site is under construction! Read all about Errai at <br><a
-              href="http://jboss.org/errai">Errai's JBoss project page</a>
-          </p>
-        </blockquote>
-
+    </section>
+    <div class="clear"></div>
+    <section class="row-fluid full">
+      <div class="span12 blockquote">
+        <hr>
+        <p>
+          <b>Important Note:</b> This web site is under construction! Read all about Errai at <br>
+          <a href="http://jboss.org/errai">Errai's JBoss project page</a>
+        </p>
+        <hr>
       </div>
-      <div class="block video-block">
-        <div class="grid_4 content-box">
+      <div class="row-fluid block video-block">
+        <div class="span4 content-box">
           <h3 class="video-box-title">Watch the quick tour video →</h3>
 
           <p class="subtitle">Learn more about Errai</p>
 
           <p>You can build a To-do List application with HTML 5 and Errai UI templates in minutes.</p>
         </div>
-        <div class="grid_8 video-box">
-          <iframe src="http://player.vimeo.com/video/55454764" width="500" height="281" frameborder="0"
-            webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <div class="span8 flex-video widescreen vimeo">
+          <iframe src="http://player.vimeo.com/video/55454764" frameborder="0" webkitAllowFullScreen mozallowfullscreen
+            allowFullScreen></iframe>
         </div>
       </div>
       <div class="clear"></div>
       <div class="spacer"></div>
 
       <!--
-        <div class="block gallery-block">
-            <div class="grid_4 content-box">
-                <h3 class="gallery-box-title">Check out some screenshots →</h3>
-            </div>
-            <div class="grid_8 gallery-box gallery">
-                <ul>
-                    <li>
-                        <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/login.png" rel="prettyPhoto[gallery1]" title="Login page provided by UberFire Security Framework."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/login.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/welcome.png" rel="prettyPhoto[gallery1]" title="Showcase default perspective."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/welcome.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/file_explorer.png" rel="prettyPhoto[gallery1]" title="Users can modify and create their own layout."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/file_explorer.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/dashboard.png" rel="prettyPhoto[gallery1]" title="UberFire can target any type of user, a dashboard is a good example of it."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/dashboard.png" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/mdeditor.png" rel="prettyPhoto[gallery1]" title="UberFire custom Markdown live editor, created for fun and profit!"><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/mdeditor.png" alt=""/></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="spacer"></div>
-         -->
+      <div class="block gallery-block">
+          <div class="grid_4 content-box">
+              <h3 class="gallery-box-title">Check out some screenshots →</h3>
+          </div>
+          <div class="grid_8 gallery-box gallery">
+              <ul>
+                  <li>
+                      <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/login.png" rel="prettyPhoto[gallery1]" title="Login page provided by UberFire Security Framework."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/login.png" alt=""/></a>
+                  </li>
+                  <li>
+                      <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/welcome.png" rel="prettyPhoto[gallery1]" title="Showcase default perspective."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/welcome.png" alt=""/></a>
+                  </li>
+                  <li>
+                      <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/file_explorer.png" rel="prettyPhoto[gallery1]" title="Users can modify and create their own layout."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/file_explorer.png" alt=""/></a>
+                  </li>
+                  <li>
+                      <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/dashboard.png" rel="prettyPhoto[gallery1]" title="UberFire can target any type of user, a dashboard is a good example of it."><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/dashboard.png" alt=""/></a>
+                  </li>
+                  <li>
+                      <a href="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/mdeditor.png" rel="prettyPhoto[gallery1]" title="UberFire custom Markdown live editor, created for fun and profit!"><img src="http://droolsjbpm.github.io/uberfire/images/gallery/fullscreen/mdeditor.png" alt=""/></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="spacer"></div>
+       -->
 
-      <div class="block video-block">
-        <div class="grid_4 content-box">
+      <div class="row-fluid block video-block">
+        <div class="span4 content-box">
           <h3 class="video-box-title">A real application built with Errai →</h3>
 
           <p class="subtitle">jBPM Console NG</p>
 
         </div>
-        <div class="grid_8 video-box">
-          <iframe src="http://www.youtube.com/embed/WMUQKncH1S0?rel=0" width="600" height="338px"></iframe>
+        <div class="span8 flex-video widescreen">
+          <iframe src="http://www.youtube.com/embed/WMUQKncH1S0?rel=0"></iframe>
         </div>
       </div>
       <div class="clear"></div>
@@ -333,66 +337,61 @@ public class CustomerForm extends Composite {
         </p>
         <div class="clear"></div>
       </div>
-      <div id="large-footer">
-        <div class="grid_4 footer-box">
+      <div id="large-footer" class="row-fluid">
+        <div class="span4 footer-box">
           <div class="footer-box-inner">
             <h5>Community</h5>
-            <h6>We love pull requests!</h6>
-
-            <p>Looking for a fun, open community project to get involved in? Well look no further than Errai! We
-              love when somebody with a great idea puts it into code and hashes out the details with us. We've got a
-              long track record of working with community contributors to get their great work into the framework.
-              Everybody wins!</p>
-
             <p>
-             <a class="footer-link" href="http://github.com/errai/errai">Fork the code on Github</a> and get started today!
+              <a class="footer-link" href="http://github.com/errai/errai">Fork the code on Github</a> and get started
+              today!
             </p>
 
             <h6>Join the Conversation</h6>
-            <p>
-              Not ready to fork &amp; modify just yet? No problem! Let's talk!
-              
-            <ul>
-              <li><a class="footer-link" href="https://community.jboss.org/en/errai?view=discussions">Community forum</a>
-                 – get unstuck
-              <li><a class="footer-link" href="https://lists.jboss.org/mailman/listinfo/errai-dev">errai-dev</a>
-                 – discuss big changes
-              <li><a class="footer-link" href="irc://irc.freenode.net/errai">#errai on freenode.net</a>
-                 – chat on IRC
-              <li><a class="footer-link" href="irc://irc.freenode.net/errai">Issue Tracker</a>
-                 – report &amp; track issues
-            </ul>
-          </div>
+            <p>Not ready to fork &amp; modify just yet? No problem! Let's talk!</div>
         </div>
-        <div class="grid_4 footer-box">
-          <div class="footer-box-inner">
-            <h5>Latest tweets</h5>
-            <a class="twitter-timeline" href="https://twitter.com/jbosserrai" data-widget-id="349985295057436672">Tweets
-              by @jbosserrai</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </div>
+        <div class="span4 footer-box">
+            <div class="footer-box-inner">
+                <h5>Latest tweets</h5>
+                <a class="twitter-timeline" href="https://twitter.com/jbosserrai" data-widget-id="349985295057436672">Tweets
+                    by @jbosserrai</a>
+                <script>!function (d, s, id) {
+                    var js, fj
+              s = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id
+              )) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://
+    
+                  platform.twitter.com/widgets.js";
+                        fjs.p
+            arentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");</script>
+            </div>
         </div>
-        <div class="grid_4 footer-box">
-          <div class="footer-box-inner">
-            <h5>About</h5>
-            <p>
-              Errai is a project of the <a class="footer-link" href="http://www.jboss.org">JBoss Community</a>,
-              and is distributed under the
-              <a class="footer-link" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License version 2.0.</a>
-            </p>
-
-            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-            <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></div>
-          </div>
+        <div class="span4 footer-box">
+            <div class="footer-box-inner">
+                <h5>About</h5>
+                <p>
+                  Errai is a project of the <a class="footer-link" href="http://www.jboss.org">JBoss Community</a>,
+                  and is distributed under the
+                  <a class="footer-link" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License version 2.0.</a>
+                </p>
+    
+                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></div>
+            </div>
         </div>
         <div class="clear"></div>
-      </div>
-      <div class="clear"></div>
-    </footer>
+    </div>
+    <div class="clear"></div>
+</footer>
+</div>
+<div class="spacer-small hidden-phone"></div>
+  <div class="footer-attribution">
+    <a href="http://www.redhat.com/"><img src="images/redhat_logo.png"></a>
   </div>
-
-  <div class="spacer-small hidden-phone"></div>
-  <div class="footer-attribution"><a href="http://www.redhat.com/"><img src="images/redhat_logo.png"></a></div>
   <div class="spacer-small hidden-phone"></div>
 
   <!-- Twitter share button -->
@@ -406,14 +405,9 @@ public class CustomerForm extends Composite {
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
   </script>
-
-  <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-  <script src="js/jquery.cslider.js" type="text/javascript"></script>
-  <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-  <script src="js/common.js" type="text/javascript"></script>
-<!--   <script src="js/rainbow-custom.min.js" type="text/javascript"></script> -->
-  <script src="js/rainbow.js" type="text/javascript"></script>
-  <script src="js/rainbow-java.js" type="text/javascript"></script>
-  <script src="js/rainbow-html.js" type="text/javascript"></script>
+<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.cslider.js" type="text/javascript"></script>
+<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
 </body>
 </html>
