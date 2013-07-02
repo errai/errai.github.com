@@ -4,10 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Hack on the Errai Framework</title>
-<!--  CSS reset -->
-<link rel="stylesheet" href="css/reset.css">
-<!--  CSS grid 960gs -->
-<link rel="stylesheet" href="css/grid.css">
+<!-- bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 <!--  Main stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 <!--  Theme: black -->
@@ -25,13 +24,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="container_12" id="main-container">
-    <div style="float:right; margin-top: 10px">
-      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-      <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+  <div class="container" id="main-container">
+    <div class="row-fluid">
+      <div style="float:right; margin-top: 10px">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+        <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+      </div>
     </div>
-
-    <div class="clear"></div>
 
     <section id="tagline">
       <div id="left-ear"></div>
@@ -39,15 +38,8 @@
       <div id="right-ear"></div>
     </section>
 
-    <div class="grid_12">
-      <h1></h1>
-      <p class=subtitle></p>
-    </div>
-
-    <div class="clear"></div>
-
-    <section id="content">
-      <div class="grid_12">
+    <section id="content" class="row-fluid">
+      <div class="span12">
         <h3>Get Started</h3>
         <ul>
           <li>Fork the Errai repository on Github
@@ -60,16 +52,59 @@
       </div>
     </section>
 
-    <div class="clear"></div>
+    <footer>
+      <div id="large-footer" class="row-fluid">
+        <div class="span4 footer-box">
+          <div class="footer-box-inner">
+            <h5>Community</h5>
+            <ul>
+              <li><a class="footer-link" href="https://community.jboss.org/en/errai?view=discussions">Community forum</a>
+                 – get unstuck
+              <li><a class="footer-link" href="https://lists.jboss.org/mailman/listinfo/errai-dev">errai-dev</a>
+                 – discuss big changes
+              <li><a class="footer-link" href="irc://irc.freenode.net/errai">#errai on freenode.net</a>
+                 – chat on IRC
+              <li><a class="footer-link" href="irc://irc.freenode.net/errai">Issue Tracker</a>
+                 – report &amp; track issues
+            </ul>
+          </div>
+        </div>
+        <div class="span4 footer-box">
+          <div class="footer-box-inner">
+            <h5>TODO</h5>
+            <p>Other stuff</p>
+          </div>
+        </div>
+        <div class="span4 footer-box">
+          <div class="footer-box-inner">
+            <h5>About</h5>
+            <p>
+              Errai is a project of the <a class="footer-link" href="http://www.jboss.org">JBoss Community</a>, and is
+              distributed under the <a class="footer-link" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache
+                License version 2.0.</a>
+            </p>
 
-    <footer>footer</footer>
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </footer>
   </div>
 
-  <div class="clear"></div>
-
-  <div class="spacer-small hidden-phone"></div>
-  <div class="footer-attribution"><a href="http://www.redhat.com/"><img src="images/redhat_logo.png"></a></div>
-  <div class="spacer-small hidden-phone"></div>
+  <br class="spacer">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12">
+        <p class="text-center" style="margin-bottom: 0">
+          <a href="http://www.redhat.com/"><img src="images/redhat_logo.png"></a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <br class="spacer">
 
   <!-- Twitter share button -->
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
