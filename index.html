@@ -10,8 +10,6 @@
 <link rel="stylesheet" href="css/cslider.css">
 <!--  Theme: black -->
 <link rel="stylesheet" href="css/black.css">
-
-<link rel="stylesheet" href="css/style.css">
 <!--  Lightbox gallery  -->
 <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen">
 <!--  Syntax highlighting theme  -->
@@ -27,6 +25,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--  Google Feeds API -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script>
+   google.load("feeds", "1");   
+   function OnLoad() {              
+     var feedControl = new google.feeds.FeedControl();
+     feedControl.addFeed("http://errai-blog.blogspot.com/feeds/posts/default", "Latest Posts");
+     feedControl.draw(document.getElementById("feed"));
+   }
+   google.setOnLoadCallback(OnLoad);
+</script>
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
   <div id="body-glow"></div>
@@ -399,18 +408,7 @@ public class CustomerForm extends Composite {
         <div class="span4 footer-box">
           <div class="footer-box-inner">
             <h5>Blog</h5>
-            <div id = "content"></div>
-            <script>
-             google.load("feeds", "1");
-
-            function OnLoad() {
-                var feedControl = new google.feeds.FeedControl();
-              feedControl.addFeed("http://errai-blog.blogspot.com/feeds/posts/default", "Latest Posts");
-              feedControl.draw(document.getElementById("content"));
-            }
-
-            google.setOnLoadCallback(OnLoad);
-           </script>
+            <div id = "feed"></div>  
           </div>
           <div class="footer-box-inner">
             <h5>About</h5>
