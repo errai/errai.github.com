@@ -5,21 +5,21 @@
 <meta charset="UTF-8">
 <title>Hack on the Errai Framework</title>
 <!-- bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
 <!--  Main stylesheet -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <!--  Theme: black -->
-<link rel="stylesheet" href="css/black.css">
+<link rel="stylesheet" href="../css/black.css">
 <!--  Syntax highlighting theme  -->
-<link rel="stylesheet" href="css/rainbow-syntax-colors.css" type="text/css">
+<link rel="stylesheet" href="../css/rainbow-syntax-colors.css" type="text/css">
 <!--  Meta  -->
 <meta name="description" content="Errai: The browser as a platform">
 <meta name="author" content="Errai Team">
 <!--  Favicon -->
 <link rel="Shortcut Icon" href="http://errai.github.io/images/errai16.png">
 <!--  HTML5 for older browsers -->
-<script src="js/modernizr-1.6.min.js"></script>
+<script src="../js/modernizr-1.6.min.js"></script>
 <!--  Device viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -39,16 +39,47 @@
     </section>
 
     <section id="content" class="row-fluid">
-      <div class="span12">
-        <h3>Get Started</h3>
-        <ul>
-          <li>Fork the Errai repository on Github
-          <li>Clone your fork
-          <li>Get Eclipse
-          <li>Ensure your Eclipse has m2e
-          <li>File → Import → Existing Maven Projects...
-          <li>Fix up build failures with <b>Build Path → Use as Source Folder</b> or <b>Build Path → Exclude</b>
-        </ul>
+      <div class="span10 offset1">
+        <h3>1. Fork the Errai repository on Github</h3>
+        <p>Navigate to the Errai project on Github and press the Fork button. This will create your own public copy
+        of the Errai project on Github, which will be required when you send us your great changes in the form of
+        pull requests!
+        
+        <p style="text-align: center">
+          <img src="images/errai-github-fork.png" class="img-rounded"><br>
+          The Fork button is near the top right corner of the page
+        </p>
+        
+        <div class="alert alert-info"><b>Note:</b> You need to have a Github account in order to fork a repository. Signing up is quick and easy!</div>
+
+        <h3>2. Get Eclipse</h3>
+        <p>If you already have Eclipse Juno or Kepler, you can skip this step.
+        <p>Otherwise, head to <a href="http://www.eclipse.org/downloads/">the Eclipse Download Site</a>
+         and grab the latest release of Eclipse IDE for Java EE Developers.
+        <p>When the download completes, install it using the usual Eclipse installation procedure for your platform.
+
+        <h3>4. Ensure your Eclipse has m2e</h3>
+        <p>Eclipse comes with all the components you need to import and build the Errai framework, except one:
+         m2e, or Maven Integration for Eclipse.
+        <p>To install m2e, go to <b>Help → Eclipse Marketplace...</b> within Eclipse and search for "m2e" in the
+         dialog that pops up:</p>
+         
+        <p style="text-align: center">
+          <img src="images/marketplace-m2e.png" class="img-rounded"><br>
+          Install this add-on: Maven Integration For Eclipse, by Eclipse.org
+        </p>
+
+        <h3>5. Clone your fork</h3>
+        Now you need to copy your fork of Errai to your own computer.
+
+
+
+        <h3>File → Import → Existing Maven Projects...</h3>
+
+        <h3>Fix up build failures</h3>
+
+        <p>With <b>Build Path → Use as Source Folder</b> or <b>Build Path → Exclude</b>
+
       </div>
     </section>
 
@@ -83,9 +114,6 @@
               distributed under the <a class="footer-link" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache
                 License version 2.0.</a>
             </p>
-
-            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-            <div class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></div>
           </div>
         </div>
         <div class="clear"></div>
@@ -99,7 +127,7 @@
     <div class="row-fluid">
       <div class="span12">
         <p class="text-center" style="margin-bottom: 0">
-          <a href="http://www.redhat.com/"><img src="images/redhat_logo.png"></a>
+          <a href="http://www.redhat.com/"><img src="../images/redhat_logo.png"></a>
         </p>
       </div>
     </div>
@@ -118,13 +146,13 @@
     })();
   </script>
 
-  <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-  <script src="js/jquery.cslider.js" type="text/javascript"></script>
-  <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-  <script src="js/common.js" type="text/javascript"></script>
+  <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="../js/jquery.cslider.js" type="text/javascript"></script>
+  <script src="../js/jquery.prettyPhoto.js" type="text/javascript"></script>
+  <script src="../js/common.js" type="text/javascript"></script>
 <!--   <script src="js/rainbow-custom.min.js" type="text/javascript"></script> -->
-  <script src="js/rainbow.js" type="text/javascript"></script>
-  <script src="js/rainbow-java.js" type="text/javascript"></script>
-  <script src="js/rainbow-html.js" type="text/javascript"></script>
+  <script src="../js/rainbow.js" type="text/javascript"></script>
+  <script src="../js/rainbow-java.js" type="text/javascript"></script>
+  <script src="../js/rainbow-html.js" type="text/javascript"></script>
 </body>
 </html>
