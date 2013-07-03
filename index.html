@@ -25,6 +25,8 @@
 <script src="js/modernizr-1.6.min.js"></script>
 <!--  Device viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  Google Feeds API -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 <body>
   <div id="body-glow"></div>
@@ -387,6 +389,21 @@ public class CustomerForm extends Composite {
           </div>
         </div>
         <div class="span4 footer-box">
+          <div class="footer-box-inner">
+            <h5>Blog</h5>
+            <div id = "content"></div>
+            <script>
+             google.load("feeds", "1");
+
+            function OnLoad() {
+                var feedControl = new google.feeds.FeedControl();
+              feedControl.addFeed("http://errai-blog.blogspot.com/feeds/posts/default", "Latest Posts");
+              feedControl.draw(document.getElementById("content"));
+            }
+
+            google.setOnLoadCallback(OnLoad);
+           </script>
+          </div>
           <div class="footer-box-inner">
             <h5>About</h5>
             <p>
