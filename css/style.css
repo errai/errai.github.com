@@ -267,6 +267,12 @@ only screen and (max-width: 767px) {
     }
 }
 
+@media (min-width: 767px) {
+    .flex-video.widescreen {
+        padding-bottom: 37%;
+    }
+}
+
 @media (max-width: 767px) {
     body {
         padding: 0;
