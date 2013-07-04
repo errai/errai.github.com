@@ -15,6 +15,10 @@ body {
     top: 0;
 }
 
+#main-container {
+    background: #f1f1f1;
+}
+
 header {
     background-image: url(../images/rays.png);
     background-repeat: no-repeat;
@@ -204,9 +208,6 @@ a.howto-link:link {
     color: #898a8a;
     font-size: 11px;
     box-sizing: border-box;
-    -moz-border-radius: 0 0 8px 8px;
-    -webkit-border-radius: 0 0 8px 8px;
-    border-radius: 0 0 8px 8px;
 }
 
 #large-footer h5 {
