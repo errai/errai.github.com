@@ -78,10 +78,6 @@ header pre .close {
     background: url(../images/right-ear.png) no-repeat top center;
 }
 
-#main-container {
-    background: #f1f1f1;
-}
-
 .content-box h3 {
     font-size: 21px;
     font-weight: bold;
@@ -111,6 +107,14 @@ header pre .close {
 .blockquote p {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+section {
+    background: #f1f1f1;
+}
+
+#teaser {
+    background: none;
 }
 
 section.full {
@@ -167,6 +171,7 @@ section.full {
     border-top: 1px solid #f9f9f9;
     padding: 13px 0 24px;
     width: 100%;
+    background: #f1f1f1;
 }
 
 #howto-panels p {
@@ -196,6 +201,9 @@ a.howto-link:link {
     color: #898a8a;
     font-size: 11px;
     box-sizing: border-box;
+    -moz-border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
 }
 
 #large-footer h5 {
