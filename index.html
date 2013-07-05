@@ -145,13 +145,9 @@ public class CustomerForm extends Composite {
 
   @Inject Caller&lt;CustomerEndpoint> customerEndpoint;
 
-  private void sendCustomerToServer(Customer customer) {
-     customerEndpoint.call(new ResponseCallback() {
-      @Override
-      public void callback(Response response) {
-        ...
-      }
-    }).create(customer);
+  private void sendCustomerToServer(Customer customer) { 
+     RemoteCallback remoteCallback = ...     
+     customerEndpoint.call(remoteCallback).create(customer);
   }
 }
             </pre>
@@ -178,18 +174,21 @@ public class CustomerForm extends Composite {
             <h2>Typesafe Distributed Events</h2>
             <pre data-language=java>
 
+@Stateless
 public class CustomerEndpointImpl implements CustomerEndpoint {
   @Inject @New 
   private Event&lt;Customer> customerEvent;
 
   public long create(Customer customer) {
+    // fire an event on the server
     customerEvent.fire(customer); 
   }
 }
 
 @Templated
 public class CustomerList extends Composite {
-  private void onNewCustomer(@Observes @New Customer customer) {...}              
+  // and simply observe the event on the client
+  private void onNewCustomer(@Observes @New Customer customer) {...}
 }
             </pre>
           </div>
