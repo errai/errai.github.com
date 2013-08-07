@@ -2,7 +2,7 @@
   // slider
   $('#da-slider').cslider({
 	autoplay    : true,
-	 interval    : 8000
+	 interval    : 10000
   });
 
   // lightbox gallery
