@@ -16,7 +16,8 @@
     bgincrement  : 50,  // increment the bg position (parallax effect) when sliding
     autoplay  : false, // slideshow on / off
     pause_hover: true, // pause on hover
-    interval  : 4000  // time between transitions
+    interval  : 4000,  // time between transitions
+    initialInterval : 4000 // time to wait until first transition
     };
   
   $.Slider.prototype   = {
@@ -167,7 +168,7 @@
     _startSlideshow    : function() {
     
       var _self  = this;
-      
+      var _interval = (_self.current === 0) ? _self.options.initialInterval : _self.options.interval;      
       this.slideshow  = setTimeout( function() {
         
         var page = ( _self.current < _self.slidesCount - 1 ) ? page = _self.current + 1 : page = 0;
@@ -179,7 +180,7 @@
         
         }
       
-      }, this.options.interval );
+      }, _interval);
     
     },
     page        : function( idx ) {
