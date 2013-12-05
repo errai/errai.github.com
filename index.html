@@ -358,7 +358,7 @@ public class CustomerForm extends Composite {
 &lt;div class="complaint"&gt;
  &lt;input id="name" type="text" placeholder="Full Name"&gt;
  &lt;input id="email" type="text" placeholder="you@example.com"&gt;
- &lt;input id="text" type="tel" placeholder="How can we help you?"&gt;
+ &lt;textarea id="text" placeholder="How can we help?"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
           <p style="max-width:465px">
@@ -378,7 +378,7 @@ public class ComplaintForm extends Composite {
   @Inject @Model Complaint complaint;
   @Inject @Bound @DataField TextBox name;
   @Inject @Bound @DataField TextBox email;
-  @Inject @Bound @DataField TextBox text;
+  @Inject @Bound @DataField TextArea text;
   @Inject @DataField Button saveButton;
 
   @EventHandler("saveButton")
