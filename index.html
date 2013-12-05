@@ -155,7 +155,7 @@ public interface CustomerEndpoint {
 public class CustomerForm extends Composite {
 
   @Inject 
-  Caller&lt;CustomerEndpoint> customerEndpoint;
+  Caller&lt;CustomerEndpoint&gt; customerEndpoint;
 
   private void sendCustomerToServer(Customer customer) { 
      RemoteCallback remoteCallback = ...     
@@ -174,7 +174,7 @@ public class CustomerForm extends Composite {
   public class MainMenu extends Composite {
 
     @Inject @DataField 
-    private TranstionAnchor&lt;CustomerForm> customerForm;
+    private TransitionAnchor&lt;CustomerForm&gt; customerForm;
     ...
   }
 
@@ -365,7 +365,7 @@ public class CustomerForm extends Composite {
             Attaching an event handler requires just a single annotation.
             Two-way data binding ensures that the model object 
             and the UI fields are automatically kept in sync. Errai also comes 
-            with built-in page navigation support that allows transistioning between 
+            with built-in page navigation support that allows transitioning between 
             pages using bookmarkable URLs. Learn all about Errai UI 
             <a href="http://docs.jboss.org/errai/2.4.2.Final/errai/reference/html_single/#sid-51806600">here</a>.
           </p>   
