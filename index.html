@@ -347,32 +347,32 @@ public class CustomerForm extends Composite {
 
     <div class="html5-summary">
       <div class="row-fluid content-box">              
-          <h3 style="padding-left:10px">HTML5 UIs</h3>
-          <p>
-            In Errai, we use standard HTML and CSS for UI layout. Take an HTML file directly from your designer or brand team and use it in your application. No need to battle merge conflicts when bringing in design changes. The HTML file just serves as a template. All client-side logic is in a companion Java class that provides access to the fields in the template. Check out this simple form to file a complaint.
-          </p>
+        <h3 style="padding-left:10px">HTML5 UIs!</h3>
+        <p>
+          In Errai, we use standard HTML and CSS for UI layout. Take an HTML file directly from your designer or brand team and use it in your application. No need to battle merge conflicts when bringing in design changes. The HTML file just serves as a template. All client-side logic is in a companion Java class that provides access to the fields in the template. Check out this simple form to file a complaint.
+        </p>
 
-          <div class="span7 row-fluid" style="margin-left:0px">
-            <h5>ComplaintForm.html</h5>   
-            <pre data-language=html style="background-color:#333;max-width:465px;font-size:12px">
+        <div class="span7 row-fluid" style="margin-left:0px">
+          <h5>ComplaintForm.html</h5>   
+          <pre data-language=html style="background-color:#333;max-width:465px;font-size:12px">
 &lt;div class="complaint"&gt;
  &lt;input type="text" id="name" placeholder="Full Name"&gt;
  &lt;input type="text" id="email" placeholder="you@example.com"&gt;
  &lt;input type="tel" id="text" placeholder="How can we help you?"&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
-            <p style="max-width:465px">
-              Attaching an event handler requires just a single annotation.
-              Also two-way data binding ensures that the model object 
-              and the UI fields are automatically kept in sync. Errai also comes 
-              with page navigation support that allows transistioning between pages
-              using bookmarkable URLs! Learn all about Errai UI 
-              <a href="http://docs.jboss.org/errai/2.4.2.Final/errai/reference/html_single/#sid-51806600">here</a>.
-            </p>   
-           </div>
-           <div class="span5 row-fluid">
-            <h5>ComplaintForm.java</h5>
-            <pre data-language=java style="background-color:#333;max-width:340px;font-size:12px">
+          <p style="max-width:465px">
+            Attaching an event handler requires just a single annotation.
+            Also two-way data binding ensures that the model object 
+            and the UI fields are automatically kept in sync. Errai also comes 
+            with page navigation support that allows transistioning between pages
+            using bookmarkable URLs! Learn all about Errai UI 
+            <a href="http://docs.jboss.org/errai/2.4.2.Final/errai/reference/html_single/#sid-51806600">here</a>.
+          </p>   
+        </div>
+        <div class="span5 row-fluid">
+          <h5>ComplaintForm.java</h5>
+          <pre data-language=java style="background-color:#333;max-width:340px;font-size:12px">
 @Templated @Page
 public class ComplaintForm extends Composite {
   @Inject @Model Complaint complaint;
@@ -385,8 +385,75 @@ public class ComplaintForm extends Composite {
   public void onSave(ClickEvent event) {    
     sendComplaintToServer(complaint);
   }
-}           </pre>           
+}         </pre>           
         </div>    
+      </div>  
+    </div>
+    <div class="html5-summary">
+      <div class="row-fluid content-box">              
+        <h3 style="padding-left:10px">Java EE in the Browser!</h3>
+        <p>
+          Errai brings Java EE to the browser! Using the GWT compiler, Errai enables you to reuse existing Java EE code on the client. Simply persist your entities into the browser's local storage using JPA and keep them in sync using our data sync module. Observe and fire CDI events on the client and exchange events between the client and server. Construct type safe REST calls using JAX-RS annotations on shared interfaces.
+        </p>
+
+        <div class="span5 row-fluid" style="margin-left:0px">
+        <h5>JPA in the Browser</h5>
+        <pre data-language=java style="background-color:#333;max-width:330px;font-size:12px">
+@Templated @Page
+public class CustomerForm extends Composite {
+
+  @Inject private EntityManager em;
+
+  public void save(Customer customer) {
+    em.merge(customer);
+    em.flush();
+  }
+}       </pre>         
+        </div>
+        <div class="span7 row-fluid" style="margin-left:0px">
+          <h5>CDI in the Browser</h5>
+          <div>
+            <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+@ApplicationScoped
+public class CustomerPresenter {
+  @Inject @New private Event&lt;Customer&gt; customerEvent;
+
+  public long create(Customer customer) {        
+    customerEvent.fire(customer); 
+  }
+}           </pre>
+            <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+@Templated
+public class CustomerList extends Composite {
+  private void onNewCustomer(@Observes @New Customer customer) {}
+}           </pre>
+          </div>         
+        </div>
+
+        <div class="span5 row-fluid" style="margin-left:0px;margin-top:1px; border-top: 1px solid #ccc;">
+          <h5>JAX-RS integration</h5>
+          <p style="margin-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces.</p> 
+          <br>
+          <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+@Path("/customers")
+public interface CustomerEndpoint {
+  @GET
+  public long create(Customer customer);  
+}         </pre>
+        </div>
+        <div class="span7 row-fluid" style="margin-left:0px; margin-top:5px;">
+          <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+@Templated @Page
+public class CustomerForm extends Composite {
+
+  @Inject Caller&lt;CustomerEndpoint&gt; customerEndpoint;
+
+  private void sendCustomerToServer(Customer customer) { 
+     RemoteCallback remoteCallback = ...     
+     customerEndpoint.call(remoteCallback).create(customer);
+  }
+}         </pre>                
+        </div>             
       </div>  
     </div>
       
