@@ -189,7 +189,7 @@ public class CustomerForm extends Composite {
 @Stateless
 public class CustomerEndpointImpl implements CustomerEndpoint {
   @Inject @New 
-  private Event&lt;Customer> customerEvent;
+  private Event&lt;Customer&gt; customerEvent;
 
   public long create(Customer customer) {
     // fire an event on the server
@@ -292,7 +292,6 @@ public class CustomerForm extends Composite {
         </div>
       </section>
 
-
       <div class="release-summary">
         <div class="row-fluid">
           <div class="span3 title">
@@ -346,15 +345,56 @@ public class CustomerForm extends Composite {
         </div>
       </div>
 
+    <div class="html5-summary">
+      <div class="row-fluid content-box">              
+          <h3 style="padding-left:10px">HTML5 UIs</h3>
+          <p>
+            In Errai, we use standard HTML and CSS for UI layout. Take an HTML file directly from your designer or brand team and use it in your application. No need to battle merge conflicts when bringing in design changes. The HTML file just serves as a template. All client-side logic is in a companion Java class that provides access to the fields in the template. Check out this simple form to file a complaint.
+          </p>
 
-      <div class="row-fluid block video-block">
-        <div class="span4 content-box">
-          <h3 class="video-box-title">Watch the quick tour video →</h3>
+          <div class="span7 row-fluid" style="margin-left:0px">
+            <h5>ComplaintForm.html</h5>   
+            <pre data-language=html style="background-color:#202020;max-width:465px;font-size:12px">
+&lt;div class="complaint"&gt;
+ &lt;input type="text" id="name" placeholder="Full Name"&gt;
+ &lt;input type="text" id="email" placeholder="you@example.com"&gt;
+ &lt;input type="tel" id="text" placeholder="How can we help you?"&gt;
+ &lt;button id="saveButton"&gt;Save&lt;/button&gt;
+&lt;/div&gt;</pre>
+            <p style="max-width:465px">
+              Attaching an event handler requires just a single annotation.
+              Also two-way data binding ensures that the model object 
+              and the UI fields are automatically kept in sync.
+            </p>   
+           </div>
+           <div class="span5 row-fluid">
+            <h5>ComplaintForm.java</h5>
+            <pre data-language=java style="background-color:#202020;max-width:330px;font-size:12px">
+@Templated @Page
+public class ComplaintForm extends Composite {
+  @Inject @Model Complaint complaint;
+  @Inject @Bound @DataField TextBox name;
+  @Inject @Bound @DataField TextBox email;
+  @Inject @Bound @DataField TextBox text;
+  @Inject @DataField Button saveButton;
 
-          <p class="subtitle">Your first steps with Errai</p>
+  @EventHandler("saveButton")
+  public void onSave(ClickEvent event) {    
+    sendComplaintToServer(complaint);
+  }
+}           </pre>           
+        </div>    
+      </div>  
+    </div>
+      
+    <div class="row-fluid block video-block">
+      <div class="span4 content-box">
+        <h3 class="video-box-title">Watch the quick tour video →</h3>
 
-          <p>You can build a To-do List application with HTML 5 and Errai UI templates in minutes.</p> 
-          <p>Get the source code of this example from <a href="https://github.com/errai/errai/tree/master/errai-demos/errai-jpa-demo-todo-list">GitHub</a>.</p>
+        <p class="subtitle">Your first steps with Errai</p>
+
+        <p>You can build a To-do List application with HTML 5 and Errai UI templates in minutes.</p> 
+        <p>Get the source code of this example from <a href="https://github.com/errai/errai/tree/master/errai-demos/errai-jpa-demo-todo-list">GitHub</a>.</p>
         </div>
         <div class="span8 flex-video widescreen vimeo">
           <iframe src="http://player.vimeo.com/video/55454764" frameborder="0" webkitAllowFullScreen mozallowfullscreen

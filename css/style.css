@@ -99,6 +99,11 @@ header pre .close {
     margin-bottom: 0;
 }
 
+div.html5-summary {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 25px;
+}
+
 div.release-summary {
     background: #EDEDED;
     border-top: 1px solid #f9f9f9;
