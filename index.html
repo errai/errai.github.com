@@ -398,7 +398,7 @@ public class ComplaintForm extends Composite {
 
         <div class="span5 row-fluid" style="margin-left:0px">
         <h5>JPA in the Browser</h5>
-        <pre data-language=java style="background-color:#333;max-width:330px;font-size:12px">
+        <pre data-language=java style="background-color:#333;min-width:330px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
 
@@ -410,10 +410,10 @@ public class CustomerForm extends Composite {
   }
 }       </pre>         
         </div>
-        <div class="span7 row-fluid" style="margin-left:0px">
+        <div class="span7 row-fluid">
           <h5>CDI in the Browser</h5>
           <div>
-            <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+            <pre data-language=java style="background-color:#333;min-width:470px;font-size:12px">
 @ApplicationScoped
 public class CustomerPresenter {
   @Inject @New private Event&lt;Customer&gt; customerEvent;
@@ -422,7 +422,7 @@ public class CustomerPresenter {
     customerEvent.fire(customer); 
   }
 }           </pre>
-            <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+            <pre data-language=java style="background-color:#333;min-width:470px;font-size:12px">
 @Templated
 public class CustomerList extends Composite {
   private void onNewCustomer(@Observes @New Customer customer) {}
@@ -434,7 +434,7 @@ public class CustomerList extends Composite {
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces.</p> 
           <br>
-          <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+          <pre data-language=java style="background-color:#333;min-width:330px;font-size:12px">
 @Path("/customers")
 public interface CustomerEndpoint {
   @GET
@@ -442,7 +442,7 @@ public interface CustomerEndpoint {
 }         </pre>
         </div>
         <div class="span7 row-fluid" style="margin-left:0px; margin-top:5px;">
-          <pre data-language=java style="background-color:#333;max-width:470px;font-size:12px">
+          <pre data-language=java style="background-color:#333;min-width:470px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
 
