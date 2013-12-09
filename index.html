@@ -413,7 +413,7 @@ public class CustomerForm extends Composite {
         <div class="span7 row-fluid">
           <h5>CDI in the Browser</h5>
           <div>
-            <pre data-language=java style="background-color:#333;min-width:470px;font-size:12px">
+            <pre data-language=java style="background-color:#333;min-width:495px;font-size:12px">
 @ApplicationScoped
 public class CustomerPresenter {
   @Inject @New private Event&lt;Customer&gt; customerEvent;
@@ -422,7 +422,7 @@ public class CustomerPresenter {
     customerEvent.fire(customer); 
   }
 }           </pre>
-            <pre data-language=java style="background-color:#333;min-width:470px;font-size:12px">
+            <pre data-language=java style="background-color:#333;min-width:495px;font-size:12px">
 @Templated
 public class CustomerList extends Composite {
   private void onNewCustomer(@Observes @New Customer customer) {}
@@ -430,19 +430,19 @@ public class CustomerList extends Composite {
           </div>         
         </div>
 
-        <div class="span5 row-fluid" style="margin-left:0px;margin-top:1px; border-top: 1px solid #ccc;">
+        <div class="span5 row-fluid" style="margin-left:0px; border-top: 1px solid #ccc;">
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces. Let Errai take care of the communication and serialization logic.</p> 
           <br>
-          <pre data-language=java style="background-color:#333;min-width:330px;font-size:12px">
+          <pre data-language=java style="padding-top:5px; background-color:#333;min-width:330px;font-size:12px">
 @Path("/customers")
 public interface CustomerEndpoint {
   @GET
   public long create(Customer customer);  
 }         </pre>
         </div>
-        <div class="span7 row-fluid" style="margin-left:0px; margin-top:5px;">
-          <pre data-language=java style="background-color:#333;min-width:470px;font-size:12px">
+        <div class="span6 row-fluid" style="margin-left:0px; margin-top:19px;">
+          <pre data-language=java style="background-color:#333;min-width:450px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
 
