@@ -292,13 +292,10 @@ public class CustomerForm extends Composite {
         </div>
       </section>
 
-      <div class="release-summary">
+      <div class="release-summary">        
         <div class="row-fluid">
-          <div class="span3 title">
-            Latest Release
-          </div>
-          <div class="span3 version-primary">
-            2.4.3.Final
+          <div class="span3 offset3 version-primary">
+            Latest Release: 2.4.3.Final
           </div>
           <div class="span6 details">
             <p>Recommended for all new projects &nbsp;
@@ -352,16 +349,16 @@ public class CustomerForm extends Composite {
           In Errai, we use standard HTML and CSS for UI layout. Take an HTML file directly from your designer or brand team and use it in your application. No need to battle merge conflicts when bringing in design changes. The HTML files just serve as templates. All client-side logic is in companion Java classes that provide access to the fields in the templates. Check out this simple HTML form to file a complaint.
         </p>
 
-        <div class="span7 row-fluid" style="margin-left:0px">
+        <div class="span7 row-fluid" style="margin-left:0px;min-width:480px">
           <h5>ComplaintForm.html</h5>   
-          <pre data-language=html style="background-color:#333;min-width:465px;font-size:12px">
+          <pre data-language=html style="background-color:#333;min-width:455px;font-size:12px">
 &lt;div class="complaint"&gt;
  &lt;input id="name" type="text" placeholder="Full Name"&gt;
  &lt;input id="email" type="text" placeholder="you@example.com"&gt;
  &lt;textarea id="text" placeholder="How can we help?"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
-          <p style="max-width:465px">
+          <p style="max-width:455px">
             Attaching an event handler requires just a single annotation.
             Two-way data binding ensures that the model object 
             and the UI fields are automatically kept in sync. Errai also comes 
@@ -370,7 +367,7 @@ public class CustomerForm extends Composite {
             <a href="http://docs.jboss.org/errai/2.4.3.Final/errai/reference/html_single/#sid-51806600">here</a>.
           </p>   
         </div>
-        <div class="span5 row-fluid">
+        <div class="span5 row-fluid" style="margin-left:0px">
           <h5>ComplaintForm.java</h5>
           <pre data-language=java style="background-color:#333;min-width:340px;font-size:12px">
 @Templated @Page
@@ -396,9 +393,9 @@ public class ComplaintForm extends Composite {
           Errai brings Java EE to the browser. Leveraging the GWT compiler, Errai enables you to reuse existing Java EE code on the client. Simply persist your entities into the browser's local storage using JPA and keep them in sync with the server using our data sync module. Observe and fire CDI events on the client and exchange events between the client and server. Learn all about Errai's Java EE features <a href="http://docs.jboss.org/errai/2.4.3.Final/errai/reference/html_single/">here</a>.
         </p>
 
-        <div class="span5 row-fluid" style="margin-left:0px">
+        <div class="span5 row-fluid" style="margin-left:0px; min-width:325px;">
         <h5>JPA in the Browser</h5>
-        <pre data-language=java style="background-color:#333;min-width:330px;font-size:12px">
+        <pre data-language=java style="background-color:#333;min-width:325px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
 
@@ -410,10 +407,10 @@ public class CustomerForm extends Composite {
   }
 }       </pre>         
         </div>
-        <div class="span7 row-fluid">
+        <div class="span7 row-fluid" style="margin-left:0px;min-width:385px;">
           <h5>CDI in the Browser</h5>
           <div>
-            <pre data-language=java style="background-color:#333;min-width:495px;font-size:12px">
+            <pre data-language=java style="background-color:#333;min-width:385px;font-size:12px">
 @ApplicationScoped
 public class CustomerPresenter {
   @Inject @New private Event&lt;Customer&gt; customerEvent;
@@ -422,7 +419,7 @@ public class CustomerPresenter {
     customerEvent.fire(customer); 
   }
 }           </pre>
-            <pre data-language=java style="background-color:#333;min-width:495px;font-size:12px">
+            <pre data-language=java style="background-color:#333;min-width:475px;font-size:12px">
 @Templated
 public class CustomerList extends Composite {
   private void onNewCustomer(@Observes @New Customer customer) {}
@@ -430,19 +427,19 @@ public class CustomerList extends Composite {
           </div>         
         </div>
 
-        <div class="span5 row-fluid" style="margin-left:0px; border-top: 1px solid #ccc;">
+        <div class="span5 row-fluid" style="margin-left:0px; border-top: 1px solid #ccc;min-width:310px">
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces. Let Errai handle the required communication and serialization logic.</p> 
           <br>
-          <pre data-language=java style="padding-top:5px; background-color:#333;min-width:330px;font-size:12px">
+          <pre data-language=java style="padding-top:5px; background-color:#333;min-width:310px;font-size:12px">
 @Path("/customers")
 public interface CustomerEndpoint {
   @GET
   public long create(Customer customer);  
 }         </pre>
         </div>
-        <div class="span6 row-fluid" style="margin-left:0px; margin-top:19px;">
-          <pre data-language=java style="background-color:#333;min-width:450px;font-size:12px">
+        <div class="span6 row-fluid" style="margin-left:0px; min-width:435px; margin-top:19px;">
+          <pre data-language=java style="background-color:#333;min-width:435px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
 
