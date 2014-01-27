@@ -352,12 +352,12 @@ public class CustomerForm extends Composite {
           In Errai, we use standard HTML and CSS for UI layout. Take an HTML file directly from your designer or brand team and use it in your application. No need to battle merge conflicts when bringing in design changes. The HTML files just serve as templates. All client-side logic is in companion Java classes that provide access to the fields in the templates. Check out this simple HTML form for filing complaints.
         </p>
 
-        <div class="span7 row-fluid" style="margin-left:0px;min-width:480px">
+        <div class="span6 row-fluid" style="margin-left:0px; margin-right:27px; min-width:480px">
           <h5>ComplaintForm.html</h5>   
           <pre data-language=html style="background-color:#333;min-width:455px;font-size:12px">
 &lt;div class="complaint"&gt;
- &lt;input id="name" type="text" placeholder="Full Name"&gt;
- &lt;input id="email" type="text" placeholder="you@example.com"&gt;
+ &lt;input id="name" type="text" placeholder="Full Name"/&gt;
+ &lt;input id="email" type="text" placeholder="you@example.com"/&gt;
  &lt;textarea id="text" placeholder="How can we help?"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
@@ -372,7 +372,7 @@ public class CustomerForm extends Composite {
         </div>
         <div class="span5 row-fluid" style="margin-left:0px">
           <h5>ComplaintForm.java</h5>
-          <pre data-language=java style="background-color:#333;min-width:340px;font-size:12px">
+          <pre data-language=java style="background-color:#333;min-width:360px;font-size:12px">
 @Templated @Page
 public class ComplaintForm extends Composite {
   @Inject @Model Complaint complaint;
@@ -396,13 +396,13 @@ public class ComplaintForm extends Composite {
           Errai brings Java EE to the browser. Leveraging the GWT compiler, Errai enables you to reuse existing Java EE code on the client. Simply persist your entities into the browser's local storage using JPA and keep them in sync with the server using our data sync module. Observe and fire CDI events on the client and exchange events between the client and server. Learn all about Errai's Java EE features <a href="http://docs.jboss.org/errai/2.4.3.Final/errai/reference/html_single/">here</a>.
         </p>
 
-        <div class="span5 row-fluid" style="margin-left:0px; min-width:325px;">
+        <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; min-width:325px;">
         <h5>JPA in the Browser</h5>
         <pre data-language=java style="background-color:#333;min-width:325px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
-
-  @Inject private EntityManager em;
+  @Inject 
+  private EntityManager em;
 
   public void save(Customer customer) {
     em.merge(customer);
@@ -416,7 +416,8 @@ public class CustomerForm extends Composite {
             <pre data-language=java style="background-color:#333;min-width:385px;font-size:12px">
 @ApplicationScoped
 public class CustomerPresenter {
-  @Inject @New private Event&lt;Customer&gt; customerEvent;
+  @Inject @New 
+  private Event&lt;Customer&gt; customerEvent;
 
   public long create(Customer customer) {        
     customerEvent.fire(customer); 
@@ -430,7 +431,7 @@ public class CustomerList extends Composite {
           </div>         
         </div>
 
-        <div class="span5 row-fluid" style="margin-left:0px; border-top: 1px solid #ccc;min-width:310px">
+        <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; border-top: 1px solid #ccc;min-width:310px">
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces. Let Errai handle the required communication and serialization logic.</p> 
           <br>
@@ -445,8 +446,8 @@ public interface CustomerEndpoint {
           <pre data-language=java style="background-color:#333;min-width:485px;font-size:12px">
 @Templated @Page
 public class CustomerForm extends Composite {
-
-  @Inject Caller&lt;CustomerEndpoint&gt; customerEndpoint;
+  @Inject 
+  Caller&lt;CustomerEndpoint&gt; customerEndpoint;
 
   private void sendCustomerToServer(Customer customer) { 
      RemoteCallback remoteCallback = ...     
