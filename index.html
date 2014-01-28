@@ -428,7 +428,7 @@ public class CustomerForm extends Composite {
   }
 }       </pre>         
         </div>
-        <div class="span7 row-fluid" style="margin-left:0px;min-width:385px">
+        <div class="span7 row-fluid" style="margin-left:0px;min-width:340x">
           <h5>CDI in the Browser</h5>
           <div>
             <pre data-language=java class="code-snippet" style="min-width:340px">
@@ -477,15 +477,15 @@ public class CustomerForm extends Composite {
     customerEndpoint.call(remoteCallback).create(customer);
   }
 }         </pre>
-          <pre data-language=java class="code-snippet-short" style="min-width:350px">
+          <pre data-language=java class="code-snippet-short" style="min-width:340px">
 @Templated @Page
 public class CustomerForm extends Composite {
   @Inject 
   Caller&lt;CustomerEndpoint&gt; caller;
 
-  void sendCustomerToServer(Customer customer) {
-    RemoteCallback remoteCallback = ...
-    caller.call(remoteCallback).create(customer);
+  void sendToServer(Customer customer) {
+    RemoteCallback callback = ...
+    caller.call(callback).create(customer);
   }
 }       </pre>
         </div>             
