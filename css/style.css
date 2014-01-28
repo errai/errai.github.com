@@ -301,6 +301,11 @@ img#footer-logo {
     height: 100%;
 }
 
+.code-snippet {
+    font-size:12px;
+    background-color:#333;    
+}
+
 br.spacer {
     padding-top: 20px;
 }
@@ -324,11 +329,49 @@ only screen and (max-width: 767px) {
     .da-slide .da-img {
         width: 75%;
     }
+    .code-snippet-full {
+        font-size:12px;
+        background-color:#333;
+        visibility:visible;
+    }
+    .code-snippet-short {
+        font-size:12px;
+        background-color:#333;
+        visibility:hidden;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .complaint-form {
+        min-width: 480px;
+    }
+    .customer-form {
+        min-width: 485px;
+    }
 }
 
 @media (min-width: 767px) {
     .flex-video.widescreen {
         padding-bottom: 37%;
+    }
+    .code-snippet-full {
+        font-size:12px;
+        background-color:#333;
+        visibility:visible;
+    }
+    .code-snippet-short {
+        font-size:12px;
+        background-color:#333;
+        visibility:hidden;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .complaint-form {
+        min-width: 480px;
+    }
+    .customer-form {
+        min-width: 485px;
     }
 }
 
@@ -351,12 +394,55 @@ only screen and (max-width: 767px) {
     header pre {
         display: none !important;
     }
+    .code-snippet-full {
+        font-size:12px;
+        background-color:#333;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        visibility:hidden;
+    }
+    .code-snippet-short {
+        font-size:12px;
+        background-color:#333;
+        visibility:visible;
+    }
+    .row-fluid {
+        min-width: 340px;
+    }
+    .complaint-form {
+        min-width: 370px;
+    }
+    .customer-form {
+        min-width: 350px;
+    }
+
 }
 
 @media (min-width: 1200px) {
     .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
         width: 940px;
     }
+    .code-snippet-full {
+        font-size:12px;
+        background-color:#333;
+        visibility:visible;
+    }
+    .code-snippet-short {
+        font-size:12px;
+        background-color:#333;
+        visibility:hidden;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+    }
+    .complaint-form {
+        min-width: 480px;
+    }
+    .customer-form {
+        min-width: 485px;
+    }
+
 }
 
 a {

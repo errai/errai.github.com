@@ -349,13 +349,20 @@ public class CustomerForm extends Composite {
           In Errai, we use standard HTML and CSS for UI layout. Take an HTML file directly from your designer or brand team and use it in your application. No need to battle merge conflicts when bringing in design changes. The HTML files just serve as templates. All client-side logic is in companion Java classes that provide access to the fields in the templates. Check out this simple HTML form for filing complaints.
         </p>
 
-        <div class="span6 row-fluid" style="margin-left:0px; margin-right:27px; min-width:480px">
+        <div class="span6 row-fluid complaint-form" style="margin-left:0px; margin-right:27px">
           <h5>ComplaintForm.html</h5>   
-          <pre data-language=html style="background-color:#333;min-width:455px;font-size:12px">
+          <pre data-language=html class="code-snippet-full" style="min-width:455px">
 &lt;div class="complaint"&gt;
  &lt;input id="name" type="text" placeholder="Full Name"/&gt;
  &lt;input id="email" type="text" placeholder="you@example.com"/&gt;
  &lt;textarea id="text" placeholder="How can we help?"&gt;&lt;/textarea&gt;
+ &lt;button id="saveButton"&gt;Save&lt;/button&gt;
+&lt;/div&gt;</pre>
+          <pre data-language=html class="code-snippet-short" style="min-width:340px">
+&lt;div class="complaint"&gt;
+ &lt;input id="name" type="text"/&gt;
+ &lt;input id="email" type="text"/&gt;
+ &lt;textarea id="text"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
           <p style="padding-left:0px;max-width:455px">
@@ -369,7 +376,7 @@ public class CustomerForm extends Composite {
         </div>
         <div class="span5 row-fluid" style="margin-left:0px">
           <h5>ComplaintForm.java</h5>
-          <pre data-language=java style="background-color:#333;min-width:360px;font-size:12px">
+          <pre data-language=java class="code-snippet-full" style="min-width:360px">
 @Templated @Page
 public class ComplaintForm extends Composite {
   @Inject @Model Complaint complaint;
@@ -382,7 +389,21 @@ public class ComplaintForm extends Composite {
   public void onSave(ClickEvent event) {    
     sendComplaintToServer(complaint);
   }
-}         </pre>           
+}         </pre> 
+          <pre data-language=java class="code-snippet-short" style="min-width:340px">
+@Templated @Page
+public class ComplaintForm extends Composite {
+  @Inject @Model Complaint complaint;
+  @Inject @Bound @DataField TextBox name;
+  @Inject @Bound @DataField TextBox email;
+  @Inject @Bound @DataField TextArea text;
+  @Inject @DataField Button saveButton;
+
+  @EventHandler("saveButton")
+  public void onSave(ClickEvent event) {    
+    sendComplaintToServer(complaint);
+  }
+}         </pre>                
         </div>    
       </div>  
     </div>
@@ -395,7 +416,7 @@ public class ComplaintForm extends Composite {
 
         <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; min-width:325px;">
         <h5>JPA in the Browser</h5>
-        <pre data-language=java style="background-color:#333;min-width:325px;font-size:12px">
+        <pre data-language=java class="code-snippet" style="min-width:325px">
 @Templated @Page
 public class CustomerForm extends Composite {
   @Inject 
@@ -407,50 +428,66 @@ public class CustomerForm extends Composite {
   }
 }       </pre>         
         </div>
-        <div class="span7 row-fluid" style="margin-left:0px;min-width:385px;">
+        <div class="span7 row-fluid" style="margin-left:0px;min-width:385px">
           <h5>CDI in the Browser</h5>
           <div>
-            <pre data-language=java style="background-color:#333;min-width:385px;font-size:12px">
+            <pre data-language=java class="code-snippet" style="min-width:340px">
 @ApplicationScoped
 public class CustomerPresenter {
   @Inject @New 
   private Event&lt;Customer&gt; customerEvent;
 
-  public long create(Customer customer) {        
+  public long create(Customer customer) {
     customerEvent.fire(customer); 
   }
 }           </pre>
-            <pre data-language=java style="background-color:#333;min-width:475px;font-size:12px">
+            <pre data-language=java class="code-snippet-full" style="min-width:475px">
 @Templated
 public class CustomerList extends Composite {
   private void onNewCustomer(@Observes @New Customer customer) {}
 }           </pre>
+            <pre data-language=java class="code-snippet-short" style="min-width:340px">
+@Templated
+public class CustomerList extends Composite {
+  void onNewCustomer(@Observes @New Customer customer) {}
+}           </pre>
           </div>         
         </div>
 
-        <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; border-top: 1px solid #ccc;min-width:310px">
+        <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; min-width:310px; border-top: 1px solid #ccc">
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces. Let Errai handle the required communication and serialization logic.</p> 
           <br>
-          <pre data-language=java style="padding-top:5px; background-color:#333;min-width:310px;font-size:12px">
+          <pre data-language=java class="code-snippet" style="padding-top:5px; min-width:310px">
 @Path("/customers")
 public interface CustomerEndpoint {
   @GET
   public long create(Customer customer);  
 }         </pre>
         </div>
-        <div class="span6 row-fluid" style="margin-left:0px; min-width:485px; margin-top:19px;">
-          <pre data-language=java style="background-color:#333;min-width:485px;font-size:12px">
+        <div class="span6 row-fluid customer-form" style="margin-left:0px">
+          <pre data-language=java class="code-snippet-full" style="margin-top:19px; min-width:485px">
 @Templated @Page
 public class CustomerForm extends Composite {
   @Inject 
   Caller&lt;CustomerEndpoint&gt; customerEndpoint;
 
   private void sendCustomerToServer(Customer customer) { 
-     RemoteCallback remoteCallback = ...     
-     customerEndpoint.call(remoteCallback).create(customer);
+    RemoteCallback remoteCallback = ...     
+    customerEndpoint.call(remoteCallback).create(customer);
   }
-}         </pre>                
+}         </pre>
+          <pre data-language=java class="code-snippet-short" style="min-width:350px">
+@Templated @Page
+public class CustomerForm extends Composite {
+  @Inject 
+  Caller&lt;CustomerEndpoint&gt; caller;
+
+  void sendCustomerToServer(Customer customer) {
+    RemoteCallback remoteCallback = ...
+    caller.call(remoteCallback).create(customer);
+  }
+}       </pre>
         </div>             
       </div>  
     </div>
