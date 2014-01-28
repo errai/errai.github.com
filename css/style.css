@@ -66,23 +66,6 @@ header pre .close {
     display: inline;
 }
 
-#left-ear, #right-ear {
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 87px
-}
-
-#left-ear {
-    left: -20px;
-    background: url(../images/left-ear.png) no-repeat top center;
-}
-
-#right-ear {
-    right: -20px;
-    background: url(../images/right-ear.png) no-repeat top center;
-}
-
 .content-box h3 {
     font-size: 21px;
     font-weight: bold;
