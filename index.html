@@ -48,8 +48,28 @@
 <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
-  <svg id="body-svg"></svg>
+<body>  
+  <svg id="body-svg"></svg>  
+  <div class="container navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> 
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+      <div class="nav-collapse collapse">
+        <ul class="nav pull-left">
+          <li class=""><a href=""><img src="images/icons/errai.png" style="height:24px">Errai</a>
+          <li class=""><a href="http://docs.jboss.org/errai/3.0.0.20140214-M4/errai/reference/html_single/#sid-54493220">Get Started</a>
+          </li>
+          <li class=""><a href="http://docs.jboss.org/errai/3.0.0.20140214-M4/errai/reference/html_single/">Learn</a>
+          </li>              
+          <li class=""><a href="#Community">Contribute</a>
+          </li>              
+        </ul>
+        <ul class="nav pull-right">
+          <li><a href="http://errai-blog.blogspot.ca/">Blog</a></li>               
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="container" id="main-container">
     <!--  Header -->
     <header>
@@ -543,7 +563,7 @@ public class CustomerForm extends Composite {
       <div id="large-footer" class="row-fluid">
         <div class="span4 footer-box">
           <div class="footer-box-inner">
-            <h5>Community</h5>
+            <h5><a id="Community" style="color:#000000">Community</a></h5>
             <h6>We love pull requests!</h6>
 
             <p>Looking for a fun, open community project to get involved in? Well look no further than Errai! We
