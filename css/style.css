@@ -334,6 +334,7 @@ only screen and (max-width: 767px) {
         font-size:12px;
         background-color:#333;
         visibility:visible;
+        min-width:657px;
     }
     .code-snippet-short {
         font-size:12px;
@@ -358,7 +359,7 @@ only screen and (max-width: 767px) {
     .code-snippet-full {
         font-size:12px;
         background-color:#333;
-        visibility:visible;
+        visibility:visible;        
     }
     .code-snippet-short {
         font-size:12px;
@@ -369,10 +370,10 @@ only screen and (max-width: 767px) {
         margin: 0px 0px 0px 0px;
     }
     .complaint-form {
-        min-width: 480px;
+        min-width: 700px;
     }
     .customer-form {
-        min-width: 485px;
+        min-width: 700px;
     }
 }
 
@@ -412,7 +413,7 @@ only screen and (max-width: 767px) {
         min-width: 340px;
     }
     .complaint-form {
-        min-width: 370px;
+        min-width: 310px;
     }
     .customer-form {
         min-width: 340px;

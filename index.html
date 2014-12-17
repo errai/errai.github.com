@@ -384,26 +384,21 @@ public class CustomerForm extends Composite {
  &lt;textarea id="text" placeholder="How can we help?"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
-          <pre data-language=html class="code-snippet-short" style="min-width:340px">
+          <pre data-language=html class="code-snippet-short" style="min-width:310px">
 &lt;div class="complaint"&gt;
  &lt;input id="name" placeholder="Full Name"&gt;
  &lt;input id="email" type="email"&gt;
  &lt;textarea id="text"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
-          <p style="padding-left:0px;max-width:455px">
-            Attaching an event handler requires just a single annotation.
-            Two-way data binding ensures that the model object 
-            and the UI fields are automatically kept in sync. Errai also comes 
-            with built-in page navigation support that allows transitioning between 
-            pages using bookmarkable URLs, all verified at compile time! 
-            Learn more about Errai UI 
+          <p style="padding-left:0px">
+            Attaching an event handler requires just a single annotation. Two-way data binding ensures that the model object and the UI fields are automatically kept in sync. Errai also comes with built-in page navigation support that allows transitioning between pages using bookmarkable URLs, all verified at compile time! Learn more about Errai UI 
             <a href="http://docs.jboss.org/errai/3.1.0.Final/errai/reference/html_single/#sid-51806600">here</a>.
           </p>   
         </div>
         <div class="span5 row-fluid" style="margin-left:0px">
           <h5>ComplaintForm.java</h5>
-          <pre data-language=java class="code-snippet-full" style="min-width:360px">
+          <pre data-language=java class="code-snippet-full">
 @Templated @Page
 public class ComplaintForm extends Composite {
   @Inject @Model Complaint complaint;
@@ -417,9 +412,11 @@ public class ComplaintForm extends Composite {
     sendComplaintToServer(complaint);
   }
 }         </pre> 
-          <pre data-language=java class="code-snippet-short" style="min-width:340px">
+          <pre data-language=java class="code-snippet-short" style="min-width:310px">
 @Templated @Page
-public class ComplaintForm extends Composite {
+public class ComplaintForm 
+  extends Composite {
+  
   @Inject @Model Complaint complaint;
   @Inject @Bound @DataField TextBox name;
   @Inject @Bound @DataField TextBox email;
@@ -427,7 +424,7 @@ public class ComplaintForm extends Composite {
   @Inject @DataField Button saveButton;
 
   @EventHandler("saveButton")
-  public void onSave(ClickEvent event) {    
+  public void onSave(ClickEvent event) {   
     sendComplaintToServer(complaint);
   }
 }         </pre>                
@@ -443,7 +440,7 @@ public class ComplaintForm extends Composite {
 
         <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; min-width:325px;">
         <h5>JPA in the Browser</h5>
-        <pre data-language=java class="code-snippet" style="min-width:325px">
+        <pre data-language=java class="code-snippet" style="min-width:310px">
 @Templated @Page
 public class CustomerForm extends Composite {
   @Inject 
@@ -458,7 +455,7 @@ public class CustomerForm extends Composite {
         <div class="span7 row-fluid" style="margin-left:0px;min-width:340x">
           <h5>CDI in the Browser</h5>
           <div>
-            <pre data-language=java class="code-snippet" style="min-width:340px">
+            <pre data-language=java class="code-snippet" style="min-width:310px">
 @ApplicationScoped
 public class CustomerPresenter {
   @Inject @New 
@@ -473,15 +470,16 @@ public class CustomerPresenter {
 public class CustomerList extends Composite {
   private void onNewCustomer(@Observes @New Customer customer) {}
 }           </pre>
-            <pre data-language=java class="code-snippet-short" style="min-width:340px">
+            <pre data-language=java class="code-snippet-short" style="min-width:310px">
 @Templated
-public class CustomerList extends Composite {
-  void onNewCustomer(@Observes @New Customer customer) {}
+public class CustomerList extends Composite
+{
+  void onNew(@Observes @New Customer c) {}
 }           </pre>
           </div>         
         </div>
 
-        <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; min-width:310px; border-top: 1px solid #ccc">
+        <div class="span5 row-fluid content-box" style="margin-left:0px; margin-right:10px; min-width:310px; border-top: 1px solid #ccc">
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces. Let Errai handle the required communication and serialization logic.</p> 
           <br>
@@ -504,9 +502,10 @@ public class CustomerForm extends Composite {
     customerEndpoint.call(remoteCallback).create(customer);
   }
 }         </pre>
-          <pre data-language=java class="code-snippet-short" style="min-width:340px">
+          <pre data-language=java class="code-snippet-short" style="min-width:310px">
 @Templated @Page
-public class CustomerForm extends Composite {
+public class CustomerForm extends Composite
+{
   @Inject 
   Caller&lt;CustomerEndpoint&gt; caller;
 
