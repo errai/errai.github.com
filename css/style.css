@@ -307,6 +307,18 @@ img#footer-logo {
     background-color:#333;    
 }
 
+.jpa { 
+  min-width:310px;
+}
+
+.cdi { 
+  min-width:310px;
+}
+
+.jaxrs { 
+  min-width:310px;
+}
+
 br.spacer {
     padding-top: 20px;
 }
@@ -343,6 +355,7 @@ only screen and (max-width: 767px) {
         height: 0px;
         padding: 0px 0px 0px 0px;
         margin: 0px 0px 0px 0px;
+        min-width: 310px;
     }
     .complaint-form {
         min-width: 480px;
@@ -368,6 +381,7 @@ only screen and (max-width: 767px) {
         height: 0px;
         padding: 0px 0px 0px 0px;
         margin: 0px 0px 0px 0px;
+        min-width: 310px;
     }
     .complaint-form {
         min-width: 700px;
@@ -408,6 +422,7 @@ only screen and (max-width: 767px) {
         font-size:12px;
         background-color:#333;
         visibility:visible;
+        min-width: 310px;
     }
     .row-fluid {
         min-width: 340px;
@@ -419,6 +434,64 @@ only screen and (max-width: 767px) {
         min-width: 340px;
     }
 
+}
+
+@media (max-width: 320px) {
+    body {
+        padding: 0;
+    }
+    #teaser {
+        background: url(../images/errai_logo.png) no-repeat center;
+    }
+    #tagline {
+        display: none;
+    }
+    .da-slider {
+        min-height: 230px;
+    }
+    .da-slide h2 {
+        margin-top: 50px;
+    }
+    header pre {
+        display: none !important;
+    }
+    .code-snippet-full {
+        font-size:10px;
+        background-color:#333;
+        height: 0px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        visibility:hidden;
+    }
+    .code-snippet-short {
+        font-size:10px;
+        background-color:#333;
+        visibility:visible;
+        min-width: 270px;
+    }
+    .code-snippet {
+        font-size:10px;
+        background-color:#333;        
+        min-width: 270px;
+    }
+    .row-fluid {
+        min-width: 310px;
+    }
+    .complaint-form {
+        min-width: 280px;
+    }
+    .customer-form {
+        min-width: 310px;
+    }
+    .jpa { 
+        min-width:270px;
+    }
+    .cdi { 
+        min-width:270px;
+    }
+    .jaxrs { 
+        min-width:270px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -437,6 +510,7 @@ only screen and (max-width: 767px) {
         height: 0px;
         padding: 0px 0px 0px 0px;
         margin: 0px 0px 0px 0px;
+        min-width: 310px;
     }
     .complaint-form {
         min-width: 480px;

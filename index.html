@@ -384,7 +384,7 @@ public class CustomerForm extends Composite {
  &lt;textarea id="text" placeholder="How can we help?"&gt;&lt;/textarea&gt;
  &lt;button id="saveButton"&gt;Save&lt;/button&gt;
 &lt;/div&gt;</pre>
-          <pre data-language=html class="code-snippet-short" style="min-width:310px">
+          <pre data-language=html class="code-snippet-short">
 &lt;div class="complaint"&gt;
  &lt;input id="name" placeholder="Full Name"&gt;
  &lt;input id="email" type="email"&gt;
@@ -412,7 +412,7 @@ public class ComplaintForm extends Composite {
     sendComplaintToServer(complaint);
   }
 }         </pre> 
-          <pre data-language=java class="code-snippet-short" style="min-width:310px">
+          <pre data-language=java class="code-snippet-short">
 @Templated @Page
 public class ComplaintForm 
   extends Composite {
@@ -438,9 +438,9 @@ public class ComplaintForm
           Errai brings Java EE to the browser. Leveraging the GWT compiler, Errai enables you to reuse existing Java EE code on the client. Simply persist your entities into the browser's local storage using JPA and keep them in sync with the server using our data sync module. Observe and fire CDI events on the client and exchange events between the client and server. Learn all about Errai's Java EE features <a href="http://docs.jboss.org/errai/3.1.0.Final/errai/reference/html_single/">here</a>.
         </p>
 
-        <div class="span5 row-fluid" style="margin-left:0px; margin-right:10px; min-width:325px;">
+        <div class="span5 row-fluid jpa" style="margin-left:0px; margin-right:10px;">
         <h5>JPA in the Browser</h5>
-        <pre data-language=java class="code-snippet" style="min-width:310px">
+        <pre data-language=java class="code-snippet jpa">
 @Templated @Page
 public class CustomerForm extends Composite {
   @Inject 
@@ -455,7 +455,7 @@ public class CustomerForm extends Composite {
         <div class="span7 row-fluid" style="margin-left:0px;min-width:340x">
           <h5>CDI in the Browser</h5>
           <div>
-            <pre data-language=java class="code-snippet" style="min-width:310px">
+            <pre data-language=java class="code-snippet cdi">
 @ApplicationScoped
 public class CustomerPresenter {
   @Inject @New 
@@ -470,7 +470,7 @@ public class CustomerPresenter {
 public class CustomerList extends Composite {
   private void onNewCustomer(@Observes @New Customer customer) {}
 }           </pre>
-            <pre data-language=java class="code-snippet-short" style="min-width:310px">
+            <pre data-language=java class="code-snippet-short">
 @Templated
 public class CustomerList extends Composite
 {
@@ -479,11 +479,11 @@ public class CustomerList extends Composite
           </div>         
         </div>
 
-        <div class="span5 row-fluid content-box" style="margin-left:0px; margin-right:10px; min-width:310px; border-top: 1px solid #ccc">
+        <div class="span5 row-fluid content-box jaxrs" style="margin-left:0px; margin-right:10px; border-top: 1px solid #ccc">
           <h5>JAX-RS Integration</h5>
           <p style="padding-left:0px">Construct type safe REST calls using JAX-RS annotations on shared interfaces. Let Errai handle the required communication and serialization logic.</p> 
           <br>
-          <pre data-language=java class="code-snippet" style="padding-top:5px; min-width:310px">
+          <pre data-language=java class="code-snippet jaxrs" style="padding-top:5px;">
 @Path("/customers")
 public interface CustomerEndpoint {
   @GET
@@ -502,7 +502,7 @@ public class CustomerForm extends Composite {
     customerEndpoint.call(remoteCallback).create(customer);
   }
 }         </pre>
-          <pre data-language=java class="code-snippet-short" style="min-width:310px">
+          <pre data-language=java class="code-snippet-short">
 @Templated @Page
 public class CustomerForm extends Composite
 {
