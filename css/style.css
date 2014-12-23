@@ -369,10 +369,12 @@ only screen and (max-width: 767px) {
     .flex-video.widescreen {
         padding-bottom: 37%;
     }
+
     .code-snippet-full {
         font-size:12px;
         background-color:#333;
-        visibility:visible;        
+        visibility:visible;
+        min-width:657px;
     }
     .code-snippet-short {
         font-size:12px;
@@ -384,7 +386,7 @@ only screen and (max-width: 767px) {
         min-width: 310px;
     }
     .complaint-form {
-        min-width: 700px;
+        min-width: 700px;        
     }
     .customer-form {
         min-width: 700px;
@@ -502,6 +504,7 @@ only screen and (max-width: 767px) {
         font-size:12px;
         background-color:#333;
         visibility:visible;
+        min-width:360px;
     }
     .code-snippet-short {
         font-size:12px;
