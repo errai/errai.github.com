@@ -1,2 +1,5 @@
 getting-started/WEB-INF/
 .project
+*.iml
+.idea/*
+*/.idea/*
